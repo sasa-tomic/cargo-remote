@@ -148,7 +148,7 @@ fn main() {
     // transfer project to build server
     let mut rsync_to = Command::new("rsync");
     rsync_to
-        .arg("-a".to_owned())
+        .arg("-a")
         .arg("--delete")
         .arg("--compress")
         .arg("-e")
@@ -189,7 +189,7 @@ fn main() {
 
     info!("Starting build process.");
     let output = Command::new("ssh")
-        .args(&["-p", &remote.ssh_port.to_string()])
+        .args(["-p", &remote.ssh_port.to_string()])
         .arg("-t")
         .arg(&build_server)
         .arg(build_command)
