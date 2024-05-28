@@ -78,13 +78,8 @@ ARGS:
 
 ## How to install
 ```bash
-cargo install --git https://github.com/sasa-tomic/cargo-remote.git
-```
-
-or for the upstream repo URL:
-
-```bash
-cargo install --git https://github.com/sgeisler/cargo-remote.git
+git clone https://github.com/sgeisler/cargo-remote
+cargo install --path cargo-remote/
 ```
 
 ### MacOS Problems
