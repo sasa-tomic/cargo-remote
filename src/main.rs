@@ -148,7 +148,7 @@ fn main() {
     // transfer project to build server
     let mut rsync_to = Command::new("rsync");
     rsync_to
-        .arg("-a")
+        .arg("-aP")
         .arg("--delete")
         .arg("--compress")
         .arg("-e")
@@ -206,7 +206,7 @@ fn main() {
         info!("Transferring artifacts back to client.");
         let file_name = file_name.unwrap_or_else(String::new);
         Command::new("rsync")
-            .arg("-a")
+            .arg("-aP")
             .arg("--delete")
             .arg("--compress")
             .arg("--exclude")
@@ -241,7 +241,7 @@ fn main() {
     if !no_copy_lock {
         info!("Transferring Cargo.lock file back to client.");
         Command::new("rsync")
-            .arg("-a")
+            .arg("-aP")
             .arg("--delete")
             .arg("--compress")
             .arg("-e")
